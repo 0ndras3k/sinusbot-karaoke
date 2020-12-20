@@ -20,12 +20,12 @@ registerPlugin({
     const audio = require('audio');
 
     function getKaraoke(text, client) {
-        var celytext = "";
-        var hudba = "";
+        var fulltext = "";
+        var audio = "";
         var name = "";
         http.simpleRequest({
             'method': 'GET',
-            'url': 'https://api.frantajaros.cz/karaoke/?token=a6a9eb1c6f63e1ea99d6c6b09d2bde69&search=' + text,
+            'url': 'https://api.frantajaros.cz/karaoke/?token={API_TOKEN}&search=' + text,
             'timeout': 6000,
         }, function (error, response) {
             if (error) {
@@ -38,12 +38,12 @@ registerPlugin({
             }
             res = response.data.toString();
             var obj = JSON.parse(res);
-            celytext = obj.text;
-            hudba = obj.youtube;
+            fulltext = obj.text;
+            audio = obj.youtube;
             name = obj.name;
             audio.say('Playing song ' + name, 'cz');
-            media.yt(hudba);
-            client.chat(celytext);
+            media.yt(audio);
+            client.chat(fulltext);
         });
     }
 
