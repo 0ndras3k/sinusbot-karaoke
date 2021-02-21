@@ -3,7 +3,7 @@ registerPlugin({
     version: '1.0.0',
     backends: ['ts3'],
     description: 'Karaoke texts in bot.',
-    author: '0ndras3k <ja@0ndras3k.tech>',
+    author: '0ndras3k <ja@oklapka.tech>',
     vars: [
         {   name: 'clientUids',
             title: 'clientUids',
