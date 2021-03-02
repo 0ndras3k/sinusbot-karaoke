@@ -25,7 +25,7 @@ registerPlugin({
         var name = "";
         http.simpleRequest({
             'method': 'GET',
-            'url': 'https://api.frantajaros.cz/karaoke/?token={API_TOKEN}&search=' + text,
+            'url': 'https://api.frantajaros.cz/karaoke/?token=49ba46dd82bea906a29c700a31c191b5&search=' + text,
             'timeout': 6000,
         }, function (error, response) {
             if (error) {
